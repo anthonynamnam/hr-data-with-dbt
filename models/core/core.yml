@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_country
+    columns:
+      - name: country_id
+        
+  - name: dim_employee
+    columns:
+      - name: email
+        test:
+          - assert_email
+      
+  # - name: fct_orders

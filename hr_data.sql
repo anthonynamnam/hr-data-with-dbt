@@ -1,7 +1,6 @@
 USE hr;
 
 /*Data for the table regions */
-
 INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
 INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
 INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
@@ -46,7 +45,6 @@ INSERT INTO locations(location_id,street_address,postal_code,city,state_province
 
 
 /*Data for the table jobs */
-
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (1,'Public Accountant',4200.00,9000.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (2,'Accounting Manager',8200.00,16000.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (3,'Administration Assistant',3000.00,6000.00);
@@ -66,6 +64,7 @@ INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (16,'Sales Repre
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (17,'Shipping Clerk',2500.00,5500.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (18,'Stock Clerk',2000.00,5000.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (19,'Stock Manager',5500.00,8500.00);
+INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (20,'Stock Trader',4000.00,10000.00);
 
 
 /*Data for the table departments */
@@ -131,7 +130,6 @@ INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_d
 
 
 /*Data for the table dependents */
-
 INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (1,'Penelope','Gietz','Child',206);
 INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (2,'Nick','Higgins','Child',205);
 INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (3,'Ed','Whalen','Child',200);

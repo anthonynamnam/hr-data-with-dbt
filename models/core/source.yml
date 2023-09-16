@@ -1,0 +1,91 @@
+version: 2
+
+sources:
+  - name: hr
+    description: HR dataset for learning DBT
+    tables:
+      # Country Table
+      - name: countries
+        columns:
+        - name: country_id
+          tests:
+            - not_null
+            - unique
+        - name: country_name
+        - name: region_id
+          tests:
+            - relationships:
+                to: source('hr','regions')
+                field: region_id
+
+      # Department Table
+      - name: departments
+        columns:
+        - name: department_id
+          tests:
+            - not_null
+            - unique
+        - name: department_name
+      
+      # Dependent Table
+      - name: dependents
+        columns:
+        - name: dependent_id
+          tests:
+            - not_null
+            - unique
+        - name: first_name
+        - name: last_name
+        - name: relationship
+        - name: employee_id
+
+      # Employee Table
+      - name: employees
+        columns:
+        - name: employee_id
+          tests:
+            - not_null
+            - unique
+        - name: first_name
+        - name: last_name
+        - name: email
+        - name: phone_number
+        - name: hire_date
+        - name: job_id
+        - name: salary
+        - name: manager_id
+        - name: department_id
+      
+      # Job Table
+      - name: jobs
+        columns:
+        - name: job_id
+          tests:
+            - not_null
+            - unique
+        - name: jod_title
+        - name: min_salary
+        - name: max_salary
+      
+      # Location Table
+      - name: locations
+        columns:
+        - name: location_id
+          tests:
+            - not_null
+            - unique
+        - name: street_address
+        - name: postal_code
+        - name: city
+        - name: state_province
+        - name: country_id
+      
+      # Region Table
+      - name: regions
+        columns:
+        - name: region_id
+          tests:
+            - not_null
+            - unique
+        - name: region_name
+      

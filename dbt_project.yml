@@ -1,0 +1,15 @@
+
+name: 'hr_dbt_example'
+version: '1.1.5'
+config-version: 2
+
+profile: 'hr_data'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:   
+    - "target"
+    - "dbt_packages"

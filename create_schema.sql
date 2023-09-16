@@ -1,10 +1,13 @@
+CREATE SCHEMA hr;
 USE hr;
 
+DROP TABLES IF EXISTS regions;
 CREATE TABLE regions (
 	region_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	region_name VARCHAR (25) DEFAULT NULL
 );
 
+DROP TABLES IF EXISTS countries;
 CREATE TABLE countries (
 	country_id CHAR (2) PRIMARY KEY,
 	country_name VARCHAR (40) DEFAULT NULL,
@@ -12,6 +15,7 @@ CREATE TABLE countries (
 	FOREIGN KEY (region_id) REFERENCES regions (region_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+DROP TABLES IF EXISTS locations;
 CREATE TABLE locations (
 	location_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	street_address VARCHAR (40) DEFAULT NULL,
@@ -22,6 +26,7 @@ CREATE TABLE locations (
 	FOREIGN KEY (country_id) REFERENCES countries (country_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+DROP TABLES IF EXISTS jobs;
 CREATE TABLE jobs (
 	job_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	job_title VARCHAR (35) NOT NULL,
@@ -29,6 +34,7 @@ CREATE TABLE jobs (
 	max_salary DECIMAL (8, 2) DEFAULT NULL
 );
 
+DROP TABLES IF EXISTS departments;
 CREATE TABLE departments (
 	department_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	department_name VARCHAR (30) NOT NULL,
@@ -36,6 +42,7 @@ CREATE TABLE departments (
 	FOREIGN KEY (location_id) REFERENCES locations (location_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+DROP TABLES IF EXISTS employees;
 CREATE TABLE employees (
 	employee_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	first_name VARCHAR (20) DEFAULT NULL,
@@ -52,6 +59,7 @@ CREATE TABLE employees (
 	FOREIGN KEY (manager_id) REFERENCES employees (employee_id)
 );
 
+DROP TABLES IF EXISTS dependents;
 CREATE TABLE dependents (
 	dependent_id INT (11) AUTO_INCREMENT PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
