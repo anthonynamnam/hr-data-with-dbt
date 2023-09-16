@@ -1,5 +1,11 @@
-# Self Learning - DBT with database
+# Project Title
+Self Learning DBT with database
 
+## Project Type
+*Self Learning*
+
+
+## Content
 - Create sample data with MySQL
 - Apply dbt to build data pipeline
 
