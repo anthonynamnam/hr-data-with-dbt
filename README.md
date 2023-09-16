@@ -23,6 +23,8 @@ After MySQL is set up, run  `create_schema.sql` to create the schema and corresp
 ## Data Loading
 After the database schema and tables are set up, run  `hr_data.sql` to import the data.
 
+## Next Step
+`Under Construction - To be added later`
 
 ---
 
