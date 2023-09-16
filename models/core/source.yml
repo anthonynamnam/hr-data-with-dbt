@@ -49,6 +49,8 @@ sources:
         - name: first_name
         - name: last_name
         - name: email
+          tests:
+            - assert_email
         - name: phone_number
         - name: hire_date
         - name: job_id

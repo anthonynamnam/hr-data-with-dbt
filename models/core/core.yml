@@ -8,7 +8,5 @@ models:
   - name: dim_employee
     columns:
       - name: email
-        test:
-          - assert_email
       
   # - name: fct_orders
