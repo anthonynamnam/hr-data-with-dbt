@@ -59,7 +59,7 @@ After the database schema and tables are set up, run  `hr_data.sql` to import th
         └── tests
     ```
 
-### 5. Set up your profiles.yml for DBT on your machine
+### 5. Set up your *profiles.yml* for DBT on your machine
 - Go to the folder `.dbt` by typing `cd ~/.dbt`
 - Copy the following to  `~/.dbt/profiles.yml`
     ```yml
@@ -84,7 +84,7 @@ After the database schema and tables are set up, run  `hr_data.sql` to import th
         password:  <your-db-password>
     ```
 
-### 6. Set up your dbt_project.yml for DBT project
+### 6. Set up your *dbt_project.yml* for DBT project
 - Go to the project folder `hr-data-with-dbt`
 - Copy the following to `dbt_project.yml`
     ```yml
@@ -115,7 +115,8 @@ After the database schema and tables are set up, run  `hr_data.sql` to import th
 ### 7. Set up and Run models
 - Copy all files under `hr-data-with-dbt/models`
 - Explanation:
-    - `source.yml`: It defines the data source structure. Not necessary to type all the tables in your database, you only need to type those tables you need.
+    - `source.yml`: It defines the data source structure. You may add tests for the sources.
+    - `model.yml`: It defines the model structure. You may add tests for the model created.
     - `dim_country_1.sql` & `dim_employee_contact.sql`: They are just the SQL that you may want to run. You may add your own sql.
 - Enter `dbt run` in `terminal`
     - Then you will see something similar to this
@@ -140,8 +141,20 @@ After the database schema and tables are set up, run  `hr_data.sql` to import th
 - The model `dim_country_1` is created as `Table`, so you should be see it in your database as a new table named `dim_country_1`
 - The model `dim_employee_contact` is created as `View`, so you should be see it in your database as a new view named `dim_employee_contact`
 
+### 8. Set up *generic test* and run tests
+- Create `generic` folder under `tests` folder
+- Copy all files under `hr-data-with-dbt/tests`
+- The file `assert_email.sql` checks if the value in the column follow email format.
+- In `source.yml`, under `employees` table, you can apply the generic test as follow:
+    ```
+    51   - name: last_name
+    52   - name: email
+    53     tests:
+    54      - assert_email  <--- Apply the generic test for column `email`
+    55   - name: phone_number
+    ```
 
-### 8. More to add
+### 9. More to add
 :hammer:`Under Construction - To be added later`:hammer:
 
 ---
