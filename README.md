@@ -58,6 +58,7 @@ After the database schema and tables are set up, run  `hr_data.sql` to import th
         ├── snapshots
         └── tests
     ```
+- Remove the `examples` folder under `models` folder.
 
 ### 5. Set up your *profiles.yml* for DBT on your machine
 - Go to the folder `.dbt` by typing `cd ~/.dbt`
