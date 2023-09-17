@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_employee_contact
+    columns:
+      - name: employee_id
+      - name: first_name
+      - name: last_name
+      - name: salary
+      - name: manager_id
