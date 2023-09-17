@@ -9,9 +9,9 @@ sources:
       - name: countries # Table Name
         columns:
         - name: country_id
-          # tests: # Set some tests (NotNull Test and Unique) for ID columns
-          #   - not_null
-          #   - unique
+          tests: # Set some tests (NotNull Test and Unique) for ID columns
+            - not_null
+            - unique
         - name: country_name
         - name: region_id
           tests:
@@ -23,18 +23,18 @@ sources:
       - name: departments # Table Name
         columns:
         - name: department_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: department_name
       
       # Dependent Table
       - name: dependents # Table Name
         columns:
         - name: dependent_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: first_name
         - name: last_name
         - name: relationship
@@ -44,9 +44,9 @@ sources:
       - name: employees # Table Name
         columns:
         - name: employee_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: first_name
         - name: last_name
         - name: email
@@ -57,17 +57,15 @@ sources:
         - name: job_id
         - name: salary
         - name: manager_id
-          tests:
-            - unique
         - name: department_id
       
       # Job Table
       - name: jobs # Table Name
         columns:
         - name: job_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: jod_title
         - name: min_salary
         - name: max_salary
@@ -76,9 +74,9 @@ sources:
       - name: locations # Table Name
         columns:
         - name: location_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: street_address
         - name: postal_code
         - name: city
@@ -89,8 +87,8 @@ sources:
       - name: regions # Table Name
         columns:
         - name: region_id
-          # tests:
-          #   - not_null
-          #   - unique
+          tests:
+            - not_null
+            - unique
         - name: region_name
       
